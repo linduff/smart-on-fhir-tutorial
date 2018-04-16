@@ -26,7 +26,7 @@
 
         $.when(pt, obv).done(function(patient, obv) {
           var byCodes = smart.byCodes(obv, 'code');
-          var gender = "female";
+          var gender = female;
 //          var gender = patient.gender;
           var dob = new Date(patient.birthDate);
           var day = dob.getDate();
