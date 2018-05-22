@@ -11,11 +11,11 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
-        $.when(pt).done(function(patient) {
-          patient.gender = "female";
-          smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
-        });
-        pt = patient.read();
+        //$.when(pt).done(function(patient) {
+        //  patient.gender = "female";
+        //  smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
+        //});
+        //pt = patient.read();
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -30,6 +30,7 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
+          smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
           var dob = new Date(patient.birthDate);
