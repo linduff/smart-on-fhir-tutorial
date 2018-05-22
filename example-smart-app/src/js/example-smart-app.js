@@ -143,8 +143,9 @@
   }
 
   window.drawVisualization = function(p) {
-    p.gender = "male";
-    console.log(p.resourceType);
+    //p.gender = "male";
+    console.log(p.resourceType, p.id);
+    conole.log(p);
     //smart.api.update({type: p.resourceType, data: JSON.stringify(p), id: p.id});
     $('#holder').show();
     $('#loading').hide();
