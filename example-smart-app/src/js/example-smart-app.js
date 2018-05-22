@@ -11,6 +11,8 @@
       if (smart.hasOwnProperty('patient')) {
         var patient = smart.patient;
         var pt = patient.read();
+        console.log(patient.resourceType, patient.id);
+        //smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
         var obv = smart.patient.api.fetchAll({
                     type: 'Observation',
                     query: {
@@ -144,8 +146,8 @@
 
   window.drawVisualization = function(p) {
     //p.gender = "male";
-    console.log(p.resourceType, p.id);
-    console.log(p);
+    //console.log(p.resourceType, p.id);
+    //console.log(p);
     //smart.api.update({type: p.resourceType, data: JSON.stringify(p), id: p.id});
     $('#holder').show();
     $('#loading').hide();
