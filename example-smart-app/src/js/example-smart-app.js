@@ -30,7 +30,7 @@
         $.when(pt, obv).fail(onError);
 
         $.when(pt, obv).done(function(patient, obv) {
-          console.log(patient);
+          console.log(smart);
           patient.id = "smart-" + patient.id;
           smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
           var byCodes = smart.byCodes(obv, 'code');
