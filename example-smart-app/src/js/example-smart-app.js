@@ -31,6 +31,7 @@
 
         $.when(pt, obv).done(function(patient, obv) {
           console.log(smart);
+          patient.gender = "female";
           smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
           var byCodes = smart.byCodes(obv, 'code');
           var gender = patient.gender;
