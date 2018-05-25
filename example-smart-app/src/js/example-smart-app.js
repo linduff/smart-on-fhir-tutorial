@@ -18,7 +18,7 @@
           console.log(smart.patient);
           console.log(patient.resourceType, patient.id);
           console.log(JSON.stringify(patient));
-          patient.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
+          smart.patient.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
           });
           pt = patient.read();
         var obv = smart.patient.api.fetchAll({
