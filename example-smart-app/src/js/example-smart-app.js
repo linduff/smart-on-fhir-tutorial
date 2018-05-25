@@ -15,6 +15,8 @@
           patient.gender = "female";
           console.log(smart);
           console.log(patient);
+          console.log(patient.resourceType, patient.id);
+          console.log(JSON.stringify(patient));
           smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
           });
           pt = patient.read();
