@@ -16,7 +16,7 @@
           console.log(smart);
           console.log(patient);
           console.log(smart.patient);
-          console.log(patient.resourceType, patient.id);
+          console.log(smart.patient.resourceType, smart.patient.id);
           console.log(JSON.stringify(patient));
           smart.api.update({type: smart.patient.resourceType, data: JSON.stringify(patient), id: smart.patient.id});
           });
