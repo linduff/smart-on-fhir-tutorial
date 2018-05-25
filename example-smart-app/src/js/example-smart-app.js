@@ -13,6 +13,7 @@
         var pt = patient.read();
         $.when(pt).done(function(patient){
           patient.gender = "female";
+          console.log(smart);
           smart.api.update({type: patient.resourceType, data: JSON.stringify(patient), id: patient.id});
           });
           pt = patient.read();
