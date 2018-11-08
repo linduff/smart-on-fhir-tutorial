@@ -12,7 +12,6 @@
         var patient = smart.patient;
         var pt = patient.read();
         $.when(pt).done(function(patient){
-          patient.gender = "female";
           console.log(smart);
           console.log(patient);
           console.log(smart.patient);
@@ -59,7 +58,7 @@
 
           var p = defaultPatient();
           p.birthdate = dobStr;
-          p.gender = "female";
+          p.gender = gender;
           p.fname = fname;
           p.lname = lname;
           p.age = parseInt(calculateAge(dob));
